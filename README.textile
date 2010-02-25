@@ -66,3 +66,6 @@ When a field is focussed, its label is animated to this opacity. Defaults to 0.5
 *<code>fadeDuration:</code> Time in milliseconds*
 When an animation occurs, it uses this setting to determine duration. Defaults to 300
 
+*<code>finalOpacity:</code> Value between 0.0 and 1.0*
+This is the max opacity a label will get when the text is blank (e.g. 0.5 will make empty field show their labels at half transparency
+

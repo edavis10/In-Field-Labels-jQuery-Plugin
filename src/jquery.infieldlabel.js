@@ -48,7 +48,8 @@
 				base.checkForEmpty();
 			}).bind('onPropertyChange', function(){
 				base.checkForEmpty();
-			});
+            });
+            base.checkForEmpty(true); // Sets finalOpacity on load
         };
 
 		// If the label is currently showing
@@ -71,7 +72,7 @@
 		base.checkForEmpty = function(blur){
 			if(base.$field.val() == ""){
 				base.prepForShow();
-				base.setOpacity( blur ? 1.0 : base.options.fadeOpacity );
+				base.setOpacity( blur ? base.options.finalOpacity : base.options.fadeOpacity );
 			} else {
 				base.setOpacity(0.0);
 			};
@@ -109,6 +110,7 @@
     };
 	
     $.InFieldLabels.defaultOptions = {
+        finalOpacity: 1.0, // How transparent should an empty label be
         fadeOpacity: 0.5, // Once a field has focus, how transparent should the label be
 		fadeDuration: 300 // How long should it take to animate from 1.0 opacity to the fadeOpacity
     };
